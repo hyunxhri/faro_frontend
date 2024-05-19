@@ -1,95 +1,57 @@
-import Image from "next/image";
+// Path: app/page.module.css
+"use client"
 import styles from "./page.module.css";
+import Image from "next/image";
+import Icon  from "../components/icons";
+import { montserrat } from "./ui/fonts";
+import Link from "next/link";
 
 export default function Home() {
+
   return (
-    <main className={styles.main}>
-      <div className={styles.description}>
-        <p>
-          Get started by editing&nbsp;
-          <code className={styles.code}>app/page.tsx</code>
-        </p>
-        <div>
-          <a
-            href="https://vercel.com?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            By{" "}
-            <Image
-              src="/vercel.svg"
-              alt="Vercel Logo"
-              className={styles.vercelLogo}
-              width={100}
-              height={24}
-              priority
-            />
-          </a>
+    <main className={styles.wrapper}>
+      <section className={[styles.landing_header, styles.flex].join(' ')}>
+        <Image src="/imgs/logoFaro.png" alt="FaroLogo" width={110} height={110}/>
+        <p>Bienvenido a Faro, la web de I.E.S Rafael Alberti para encontrar sus prácticas de ciclo</p>
+      </section>
+        <section className={[styles.title, styles.flex].join(' ')}>
+          <h1>La mejor <br/><span className={styles.decoration} style={{ paddingLeft: '2vw', marginLeft: '-2vw' }}>web</span>
+          para <br/>encontrar <span className={styles.decoration} style={{ paddingRight: '6vw', marginLeft: '-1vw'}}>prácticas</span> de ciclo</h1>
+        </section>
+        <Image className={styles.centerImage} src="/imgs/faroLanding.png" alt="FaroImg" width={300} height={300}/>
+        <ul className={[styles.infoList, styles.flex].join(' ')}>
+          <li className={styles.info}>
+            <Icon src="/icons/chart.svg" width={50} height={50} />
+            <p>Encuentre las mejores empresas según su perfil y preferencias</p>
+          </li>
+          <li className={styles.info}>
+            <Icon src="/icons/networking.svg" width={60} height={60} />
+            <p>Mejore su networking, amplie su red de contacto fácilmente</p> 
+          </li>
+          <li className={styles.info}>
+            <Icon src="/icons/newspaper.svg" width={50} height={50} />
+            <p>Infórmese de todas las novedades, no pierda ninguna oportunidad</p>
+          </li>
+        </ul>
+
+        <h3 className={styles.authTitle}>Regístrese en nuestra comunidad</h3>
+        <section className={styles.authContent}></section>
+        <p className={styles.authInfo}>Disfrute de las ventajas de FARO autenticándose<br/> con su propia cuenta</p>
+        <div className={styles.buttonsContainer}>
+        <button style={{marginRight: '25px'}} className={[styles.authButton, `${montserrat.className} antialiased`].join(' ')}><Link href="/login">Inicia Sesión</Link></button>
+        <button className={[styles.authButton, `${montserrat.className} antialiased`].join(' ')}><Link href="/register">Regístrese</Link></button>
         </div>
-      </div>
 
-      <div className={styles.center}>
-        <Image
-          className={styles.logo}
-          src="/next.svg"
-          alt="Next.js Logo"
-          width={180}
-          height={37}
-          priority
-        />
-      </div>
+        <footer className={styles.containerFooter}>
+          <ul className={styles.linksFooter}>
+            <li className={styles.link}><Link href="#">Política de privacidad</Link></li>
+            <li className={styles.link}><Link href="#">Cookies</Link></li>
+            <li className={styles.link}><Link href="#">Contáctanos</Link></li>
+            <li className={styles.link}><Link href="/autorship">Autoría</Link></li>
+          </ul>
+        </footer>
 
-      <div className={styles.grid}>
-        <a
-          href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className={styles.card}
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2>
-            Docs <span>-&gt;</span>
-          </h2>
-          <p>Find in-depth information about Next.js features and API.</p>
-        </a>
-
-        <a
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className={styles.card}
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2>
-            Learn <span>-&gt;</span>
-          </h2>
-          <p>Learn about Next.js in an interactive course with&nbsp;quizzes!</p>
-        </a>
-
-        <a
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className={styles.card}
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2>
-            Templates <span>-&gt;</span>
-          </h2>
-          <p>Explore starter templates for Next.js.</p>
-        </a>
-
-        <a
-          href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className={styles.card}
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2>
-            Deploy <span>-&gt;</span>
-          </h2>
-          <p>
-            Instantly deploy your Next.js site to a shareable URL with Vercel.
-          </p>
-        </a>
-      </div>
     </main>
   );
 }
+
