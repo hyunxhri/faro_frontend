@@ -5,6 +5,7 @@ import Image from "next/image";
 import Icon  from "../components/icons";
 import { montserrat } from "./ui/fonts";
 import Link from "next/link";
+import Button from "@/components/button";
 
 export default function Home() {
 
@@ -38,8 +39,10 @@ export default function Home() {
         <section className={styles.authContent}></section>
         <p className={styles.authInfo}>Disfrute de las ventajas de FARO autenticándose<br/> con su propia cuenta</p>
         <div className={styles.buttonsContainer}>
-        <button style={{marginRight: '25px'}} className={[styles.authButton, `${montserrat.className} antialiased`].join(' ')}><Link href="/login">Inicia Sesión</Link></button>
-        <button className={[styles.authButton, `${montserrat.className} antialiased`].join(' ')}><Link href="/register">Regístrese</Link></button>
+          <div className={styles.marginButton}>
+            <Button className={styles.authButton} text="Inicie Sesión" href="/login"/>
+          </div>
+          <Button className={styles.authButton} text="Regístrese" href="/register"/>
         </div>
 
         <footer className={styles.containerFooter}>
