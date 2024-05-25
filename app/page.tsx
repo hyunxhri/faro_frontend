@@ -3,7 +3,6 @@
 import styles from "./page.module.css";
 import Image from "next/image";
 import Icon  from "../components/icons";
-import { montserrat } from "./ui/fonts";
 import Link from "next/link";
 import Button from "@/components/button";
 
@@ -12,12 +11,12 @@ export default function Home() {
   return (
     <main className={styles.wrapper}>
       <section className={[styles.landing_header, styles.flex].join(' ')}>
-        <Image src="/imgs/logoFaro.png" alt="FaroLogo" width={110} height={110}/>
+        <Image className={styles.logo} src="/imgs/logoFaro.png" alt="FaroLogo" width={110} height={110}/>
         <p>Bienvenido a Faro, la web de I.E.S Rafael Alberti para encontrar sus prácticas de ciclo</p>
       </section>
         <section className={[styles.title, styles.flex].join(' ')}>
-          <h1>La mejor <br/><span className={styles.decoration} style={{ paddingLeft: '2vw', marginLeft: '-2vw' }}>web</span>
-          para <br/>encontrar <span className={styles.decoration} style={{ paddingRight: '6vw', marginLeft: '-1vw'}}>prácticas</span> de ciclo</h1>
+          <h1>La mejor <br/><span className={[styles.decoration, styles.deco1].join(' ')}>web</span>
+          para <br/>encontrar <span className={[styles.decoration, styles.deco2].join(' ')}>prácticas</span> de ciclo</h1>
         </section>
         <Image className={styles.centerImage} src="/imgs/faroLanding.png" alt="FaroImg" width={300} height={300}/>
         <ul className={[styles.infoList, styles.flex].join(' ')}>
@@ -37,7 +36,7 @@ export default function Home() {
 
         <h3 className={styles.authTitle}>Regístrese en nuestra comunidad</h3>
         <section className={styles.authContent}></section>
-        <p className={styles.authInfo}>Disfrute de las ventajas de FARO autenticándose<br/> con su propia cuenta</p>
+        <p className={styles.authInfo}>Disfrute de las ventajas de FARO autenticándose con su propia cuenta</p>
         <div className={styles.buttonsContainer}>
           <div className={styles.marginButton}>
             <Button className={styles.authButton} text="Inicie Sesión" href="/login"/>
