@@ -4,7 +4,7 @@ import styles from "./page.module.css";
 import Image from "next/image";
 import Icon  from "../components/icons";
 import Link from "next/link";
-import Button from "@/components/button";
+import Button from "@/components/buttons/button";
 
 export default function Home() {
 

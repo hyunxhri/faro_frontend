@@ -1,6 +1,6 @@
 "use client"
 import styles from "./not-found.module.css";
-import Button from "@/components/button";
+import Button from "@/components/buttons/button";
 import Image from "next/image";
 
 
