@@ -1,6 +1,6 @@
 import React from 'react';
 import styles from './button.module.css';
-import { montserrat } from '../app/ui/fonts';
+import { montserrat } from '../../app/ui/fonts';
 import Link from 'next/link';
 
 interface ButtonProps{
